@@ -152,15 +152,11 @@ def render_styles() -> None:
             color: #ffffff !important;
         }
 
-        /* High-contrast Segmented Control Buttons */
+        /* High-contrast Segmented Control & Action Buttons */
         div[data-testid="stButton"] button[kind="primary"],
-        div[data-testid="stButton"] button[kind="primary"] *,
-        section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"],
-        section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"] * {
+        section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"] {
             background-color: #ffffff !important;
             background: #ffffff !important;
-            color: #000000 !important;
-            -webkit-text-fill-color: #000000 !important;
             border: 1px solid #ffffff !important;
             border-radius: var(--radius-pill) !important;
             padding: 0.55rem 1.4rem !important;
@@ -168,6 +164,15 @@ def render_styles() -> None:
             font-size: 0.92rem !important;
             letter-spacing: -0.01em !important;
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.25) !important;
+        }
+
+        div[data-testid="stButton"] button[kind="primary"] *,
+        section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"] * {
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            font-weight: 700 !important;
         }
 
         div[data-testid="stButton"] button[kind="secondary"],
@@ -424,6 +429,13 @@ def render_styles() -> None:
         }
         div[data-testid="stTextInput"] {
             margin-bottom: -0.45rem;
+        }
+        header[data-testid="stHeader"] button[data-testid="stBaseButton-header"] {
+            display: none !important;
+        }
+        div[data-testid="stToast"],
+        div[data-testid="stNotification"] {
+            display: none !important;
         }
         </style>
         """,
